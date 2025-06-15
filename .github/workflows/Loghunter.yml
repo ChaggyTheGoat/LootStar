@@ -1,0 +1,26 @@
+name: InfernoLogHunter Advanced AutoScan
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v2
+
+    - name: 🐍 Set Up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
+
+    - name: ⚙️ Install Dependencies
+      run: |
+        pip install requests feedparser beautifulsoup4 flask
+
+    - name: 🚀 Run Advanced InfernoLogHunter
+      run: python InfernoLogHunter_Pro_Interactive_Advanced.py
