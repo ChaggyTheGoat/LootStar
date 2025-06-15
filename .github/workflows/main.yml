@@ -1,21 +1,25 @@
-name: GameRipper Auto
+name: GameRipper Every 30min
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
-  workflow_dispatch:
+    - cron: '*/30 * * * *'  # يشغل السكربت كل 30 دقيقة
+  workflow_dispatch:        # يسمح لك بتشغيله يدويًا من GitHub
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
+    - name: 🔄 Checkout repo
       uses: actions/checkout@v2
-    - name: Install Python
+
+    - name: 🐍 Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11'
-    - name: Install requirements
+        python-version: 3.11
+
+    - name: 📦 Install dependencies
       run: pip install requests beautifulsoup4 feedparser
-    - name: Run script
-      run: python GameRipper_Ultimate.py
+
+    - name: 🚀 Run GameRipper
+      run: python GameRipper_Ultimate_Clean.py
