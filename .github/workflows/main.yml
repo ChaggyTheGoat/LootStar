@@ -1,0 +1,21 @@
+name: GameRipper Auto
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
+    - name: Install requirements
+      run: pip install requests beautifulsoup4 feedparser
+    - name: Run script
+      run: python GameRipper_Ultimate.py
