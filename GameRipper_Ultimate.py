@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 
 # =================== CONFIG ====================
 TELEGRAM_BOT_TOKEN = "8082296273:AAF5mE034vCyI2iMLfT4Us2Enb1zvTWUqdE"
-TELEGRAM_CHAT_ID = "@yourchannel_or_userid"  # replace later
+TELEGRAM_CHAT_ID = "@@c4_vb0"  # replace later
 DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1383829637733417030/PwdQVa768Wzd_N8WJclA3l2e3hjgIsllrwpVnedMDRyx_b_dWK5QXjjLcbFTlJXUbFZt"
 
 SCRAPE_INTERVAL = 600  # 10 minutes
