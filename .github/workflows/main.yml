@@ -2,8 +2,8 @@ name: GameRipper Every 30min
 
 on:
   schedule:
-    - cron: '*/30 * * * *'     # كل 30 دقيقة
-  workflow_dispatch:            # تشغيل يدوي متاح
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -23,4 +23,4 @@ jobs:
         pip install requests beautifulsoup4 feedparser
 
     - name: 🚀 Run GameRipper
-      run: python GameRipper_Ultimate_Clean_Fixed.py
+      run: python GameRipper_Ultimate_Clean_Final_Integrated.py
