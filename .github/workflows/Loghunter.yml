@@ -1,8 +1,8 @@
-name: InfernoLogHunter Advanced AutoScan
+name: InfernoLogHunter Telegram Only
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Every 15 minutes
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -10,17 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 📥 Checkout Code
+    - name: Checkout Repo
       uses: actions/checkout@v2
 
-    - name: 🐍 Set Up Python
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.11'
 
-    - name: ⚙️ Install Dependencies
+    - name: Install dependencies
       run: |
-        pip install requests feedparser beautifulsoup4 flask
+        pip install requests feedparser beautifulsoup4
 
-    - name: 🚀 Run Advanced InfernoLogHunter
-      run: python InfernoLogHunter_Pro_Interactive_Advanced.py
+    - name: Run InfernoLogHunter Telegram-Only
+      run: python InfernoLogHunter_Pro_Telegram_Only.py
